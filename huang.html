@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师节感恩 - 黄老师</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        .party-flag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #C20B0B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFDE59;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        h1 {
+            color: #C20B0B;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .message-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #C20B0B, #FFDE59);
+        }
+        
+        .teacher-name {
+            color: #C20B0B;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .message-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .blessings {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .blessing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blessing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(194, 11, 11, 0.1);
+        }
+        
+        .blessing-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #C20B0B, #FFDE59);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s;
+        }
+        
+        .blessing-card:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .interactive-section {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 222, 89, 0.1);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .btn-send {
+            background: linear-gradient(to right, #C20B0B, #FF8E49);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn-send:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(194, 11, 11, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Animation elements */
+        .falling-element {
+            position: absolute;
+            color: rgba(194, 11, 11, 0.15);
+            font-size: 1.2rem;
+            z-index: -1;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end);
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 飘落元素由JavaScript动态生成 -->
+    
+    <div class="container">
+        <header>
+            <div class="party-flag">党</div>
+            <h1>教师节感恩</h1>
+            <p class="subtitle">特别致敬敬爱的黄老师</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="message-box">
+                <h2 class="teacher-name">亲爱的黄老师</h2>
+                <div class="message-content">
+                    <p>在这特别的日子里，我想向您表达最深的感激之情。</p>
+                    <p>您不仅是传授知识的教师，更是我们人生的引路人。作为党员教师，您以身作则，为我们树立了优秀的榜样，用行动诠释着责任与担当。</p>
+                    <p>您的教诲如春风化雨，滋润我们的心田；您的奉献如明灯指引，照亮我们前行的道路。</p>
+                    <p>感谢您的辛勤付出，感谢您的耐心指导，感谢您为我们付出的一切！</p>
+                </div>
+            </div>
+            
+            <div class="blessings">
+                <h2 style="text-align: center; color: #C20B0B; margin-bottom: 20px;">教师节祝福语</h2>
+                
+                <div class="blessing-card">
+                    <p>师恩重如山，学生不敢忘。祝您节日快乐！[1](@ref)</p>
+                </div>
+                
+                <div class="blessing-card">
+                    <p>一朝沐杏雨，一生念师恩。永远感谢您。[1](@ref)</p>
+                </div>
+                
+                <div class="blessing-card">
+                    <p>辛勤的汗水是您无私的奉献，桃李满天下是您最高的荣誉。[1](@ref)</p>
+                </div>
+                
+                <div class="blessing-card">
+                    <p>您的教诲，如春风化雨，滋润我心田。[1](@ref)</p>
+                </div>
+                
+                <div class="blessing-card">
+                    <p>能遇良师，何其有幸。祝您教师节快乐！[1](@ref)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="interactive-section">
+            <h2>送上您的祝福</h2>
+            <p>点击下方按钮，生成您的专属祝福</p>
+            <button class="btn-send" onclick="generateBlessing()">生成祝福</button>
+            <p id="customBlessing" style="margin-top: 20px; font-style: italic; min-height: 30px; color: #C20B0B;"></p>
+        </div>
+        
+        <footer>
+            <p>❤️ 谨以此页向黄老师及所有辛勤工作的教师们致敬 ❤️</p>
+            <p>Happy Teachers' Day! · 2025年9月10日</p>
+        </footer>
+    </div>
+
+    <script>
+        // 创建飘落元素
+        function createFallingElements() {
+            const elements = ['❤️', '✦', '★', '♪', '☆', 'Thanks', '感恩'];
+            const container = document.body;
+            
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.className = 'falling-element';
+                element.textContent = elements[Math.floor(Math.random() * elements.length)];
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                element.style.opacity = Math.random() * 0.5 + 0.1;
+                element.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                container.appendChild(element);
+            }
+        }
+        
+        // 生成随机祝福语
+        function generateBlessing() {
+            const blessings = [
+                "黄老师，您的教诲如春风，师恩似海深。祝您教师节快乐！[2](@ref)",
+                "感谢您用知识的力量为我们打开世界的大门。教师节快乐！[2](@ref)",
+                "您是人类灵魂的工程师！您的教导如细雨润物般悠远。感谢您！[4](@ref)",
+                "老师，您辛苦了！您的每一句话，都如金石般铿锵有力。[4](@ref)",
+                "您用平凡的笔，书写我们不凡的未来。谢谢您，黄老师！[1](@ref)",
+                "您是我们的超人，也是最温暖的依靠。祝黄老师教师节快乐！[1](@ref)",
+                "老师，愿您笑口常开，永远年轻！Happy Teachers' Day![1](@ref)",
+                "我不是您最出色的学生，您却是我最崇敬的老师。谢谢您，黄老师！[1](@ref)"
+            ];
+            
+            const randomBlessing = blessings[Math.floor(Math.random() * blessings.length)];
+            const blessingElement = document.getElementById('customBlessing');
+            
+            blessingElement.textContent = randomBlessing;
+        }
+        
+        // 初始化
+        window.onload = function() {
+            createFallingElements();
+            
+            // 添加打字机效果
+            const messageBox = document.querySelector('.message-content');
+            messageBox.style.opacity = 1;
+        };
+    </script>
+</body>
+</html>
